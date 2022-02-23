@@ -1,5 +1,5 @@
 questions:
-- variable: persistence.persistence
+- variable: persistence.enabled
   default: true
   description: "create pvc for mysql"
   label: Persistence
