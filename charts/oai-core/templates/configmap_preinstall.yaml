@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-preinstall-configmap
+  annotations:
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-weight": "0"
+data:
+  precheck.sh: |-
+    #!/bin/bash
+    ATTEMPTS=0
+    ROLLOUT_STATUS_CMD="curl oai-nrf-svc"
+    until $ROLLOUT_STATUS_CMD || [ $ATTEMPTS -eq 60 ]; do
+      $ROLLOUT_STATUS_CMD
+      ATTEMPTS=$((attempts + 1))
+      sleep 5
+    done
