@@ -20,33 +20,33 @@ maintainers:
 dependencies:
   - name: oai-amf
     version: 1.1.0
-    repository: "file://../oai-amf"
+    repository: "file://../../oai-amf"
     condition: oai-amf.enabled
   - name: oai-ausf
     version: 1.1.2
-    repository: "file://../oai-ausf"
+    repository: "file://../../oai-ausf"
     condition: oai-ausf.enabled
   - name: oai-nrf
     version: 1.1.0
-    repository: "file://../oai-nrf"
+    repository: "file://../../oai-nrf"
     condition: oai-nrf.enabled
   - name: oai-smf
     version:  1.1.0
-    repository: "file://../oai-smf"
+    repository: "file://../../oai-smf"
     condition: oai-smf.enabled
   - name: oai-spgwu-tiny
     version: 1.1.2
-    repository: "file://../oai-spgwu-tiny"
+    repository: "file://../../oai-spgwu-tiny"
     condition: oai-spgwu-tiny.enabled
   - name: oai-udm
     version: 1.1.2
-    repository: "file://../oai-udm"
+    repository: "file://../../oai-udm"
     condition: oai-udm.enabled
   - name: oai-udr
     version: 1.1.2
-    repository: "file://../oai-udr"
+    repository: "file://../../oai-udr"
     condition: oai-udr.enabled
   - name: mysql
     version: 1.6.9
-    repository: "file://../mysql"
+    repository: "file://../../mysql"
     condition: mysql.enabled
