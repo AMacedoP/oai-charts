@@ -16,6 +16,7 @@ spec:
       labels:
         {{- include "oai-amf.selectorLabels" . | nindent 8 }}
       annotations:
+        releaseTime: {{ now | date "2006-01-02T15:04:05" }}
         traffic.sidecar.istio.io/excludeOutboundIPRanges: 0.0.0.0/0
     {{- if .Values.multus.create }}
         k8s.v1.cni.cncf.io/networks: >-
