@@ -24,6 +24,10 @@ spec:
       imagePullSecrets:
         {{ toYaml .Values.imagePullSecrets | indent 8 }}
     {{- end }}
+      initContainers:
+      - name: wait-for-service
+        image: busybox:1.28
+        command: [ 'sh', '-c', "until nslookup oai-nrf-svc; do echo waiting for oai-nrf-svc; sleep 4; done" ]
       containers:
       - name: tcpdump
         image: "{{ .Values.tcpdumpimage.repository }}:{{ .Values.tcpdumpimage.version }}"
