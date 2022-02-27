@@ -5,8 +5,8 @@ oai-amf:
     repository: rdefosseoai/oai-amf
     version: develop
     pullPolicy: IfNotPresent
-  nodeSelector:
-    cnf-type: control-plane
+#  nodeSelector:
+#    cnf-type: control-plane
   multus:
     hostInterface: "ens8"
     routes: 
@@ -27,8 +27,8 @@ oai-smf:
     repository: rdefosseoai/oai-smf
     version: v1.2.1
     pullPolicy: IfNotPresent
-  nodeSelector:
-    cnf-type: control-plane
+#  nodeSelector:
+#    cnf-type: control-plane
   multus:
     create: false
   config:
@@ -41,8 +41,8 @@ oai-nrf:
     version: v1.2.1
     pullPolicy: IfNotPresent
   repository: rdefosseoai/oai-nrf
-  nodeSelector:
-    cnf-type: control-plane
+#  nodeSelector:
+#    cnf-type: control-plane
 oai-spgwu-tiny:
   enabled: true
   weight: 7
@@ -50,8 +50,8 @@ oai-spgwu-tiny:
     repository: rdefosseoai/oai-spgwu-tiny
     version: v1.1.4
     pullPolicy: IfNotPresent
-  nodeSelector:
-    cnf-type: user-plane
+#  nodeSelector:
+#    cnf-type: user-plane
   config:
     nssaiSst0: 222
     nssaiSd0: 123
@@ -73,8 +73,8 @@ oai-ausf:
     version: v1.2.1
     repository: rdefosseoai/oai-ausf
     pullPolicy: IfNotPresent
-  nodeSelector:
-    cnf-type: control-plane
+#  nodeSelector:
+#    cnf-type: control-plane
 oai-udm:
   enabled: true
   weight: 3
@@ -82,8 +82,8 @@ oai-udm:
     version: v1.2.1
     repository: rdefosseoai/oai-udm
     pullPolicy: IfNotPresent
-  nodeSelector:
-    cnf-type: control-plane
+#  nodeSelector:
+#    cnf-type: control-plane
 oai-udr:
   enabled: true
   weight: 2
@@ -91,8 +91,8 @@ oai-udr:
     version: v1.2.1
     repository: rdefosseoai/oai-udr
     pullPolicy: IfNotPresent
-  nodeSelector:
-    cnf-type: control-plane
+#  nodeSelector:
+#    cnf-type: control-plane
 mysql:
   enabled: true
   weight: 0
