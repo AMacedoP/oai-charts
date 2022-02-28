@@ -91,6 +91,8 @@ oai-udr:
     version: v1.2.1
     repository: rdefosseoai/oai-udr
     pullPolicy: IfNotPresent
+  livenessProbe: true
+  readinessProbe: true
 #  nodeSelector:
 #    cnf-type: control-plane
 mysql:
