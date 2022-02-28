@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eo pipefail
+#set -eo pipefail
 
 STATUS=0
 SBI_PORT_STATUS=$(netstat -tnpl | grep -o "$UDR_INTERFACE_PORT_FOR_NUDR")
