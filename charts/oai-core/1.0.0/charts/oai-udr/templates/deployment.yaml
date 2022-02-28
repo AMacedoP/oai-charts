@@ -60,25 +60,21 @@ spec:
           name: scripts
         {{- if .Values.readinessProbe}}
         readinessProbe:
-          httpGet:
-            path: /
-            port: {{ .Values.service.http1Port }}
-#          exec:
-#            command:
-#            - sh
-#            - /scripts/live-ready.sh
+          exec:
+            command:
+            - sh
+            - -c
+            - netstat -tnpl | grep -o "$UDR_INTERFACE_PORT_FOR_NUDR"
           initialDelaySeconds: 5
           periodSeconds: 5
         {{- end}}
         {{- if .Values.livenessProbe}}
         livenessProbe:
-          httpGet:
-            path: /
-            port: {{ .Values.service.http1Port }}
-#          exec:
-#            command:
-#            - sh
-#            - /scripts/live-ready.sh
+          exec:
+            command:
+            - sh
+            - -c
+            - netstat -tnpl | grep -o "$UDR_INTERFACE_PORT_FOR_NUDR"
           initialDelaySeconds: 10
           periodSeconds: 5
         {{- end}}
