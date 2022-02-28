@@ -66,8 +66,6 @@ oai-spgwu-tiny:
         gw: "192.168.18.129"
       - network: "192.168.70.128/26"
         gw: "192.168.18.129"
-      - network: "0.0.0.0/0"
-        gw: "192.168.18.129"
 oai-ausf:
   enabled: true
   weight: 4
