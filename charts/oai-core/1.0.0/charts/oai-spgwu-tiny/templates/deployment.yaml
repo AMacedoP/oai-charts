@@ -22,8 +22,7 @@ spec:
     {{- if .Values.multus.create }}
         k8s.v1.cni.cncf.io/networks: >-
           [{
-                 "name": "{{ .Chart.Name }}-{{ .Values.namespace }}-n3-net1",
-                 "default-route": ["{{ .Values.multus.sgiGw }}"]
+                 "name": "{{ .Chart.Name }}-{{ .Values.namespace }}-n3-net1"
           }]
     {{- end }}
     spec:
