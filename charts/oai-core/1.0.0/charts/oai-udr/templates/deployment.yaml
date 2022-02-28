@@ -160,6 +160,7 @@ spec:
       - name: scripts
         configMap:
           name: {{ .Chart.Name }}-health-cm
+          defaultMode: 0777
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
