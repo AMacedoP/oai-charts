@@ -64,7 +64,7 @@ spec:
             command:
             - sh
             - -c
-            - netstat -tnpl | grep -o "$UDR_INTERFACE_PORT_FOR_NUDR"
+            - netstat -tnpl | grep -o "$UDR_INTERFACE_PORT_FOR_NUDR" && netstat -tpn | grep -o 3306
           initialDelaySeconds: 5
           periodSeconds: 5
         {{- end}}
@@ -74,7 +74,7 @@ spec:
             command:
             - sh
             - -c
-            - netstat -tnpl | grep -o "$UDR_INTERFACE_PORT_FOR_NUDR"
+            - netstat -tnpl | grep -o "$UDR_INTERFACE_PORT_FOR_NUDR" && netstat -tpn | grep -o 3306
           initialDelaySeconds: 10
           periodSeconds: 5
         {{- end}}

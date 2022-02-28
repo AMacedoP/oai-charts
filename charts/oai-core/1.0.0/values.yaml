@@ -66,6 +66,9 @@ oai-spgwu-tiny:
         gw: "192.168.18.129"
       - network: "192.168.70.128/26"
         gw: "192.168.18.129"
+# route to control plane
+      - network: "10.42.0.0/16"
+        gw: "169.254.1.1"
 oai-ausf:
   enabled: true
   weight: 4
