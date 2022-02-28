@@ -62,8 +62,7 @@ spec:
         readinessProbe:
           exec:
             command:
-            - sh
-            - /scripts/live-ready.sh
+            - netstat -tnpl | grep -o "$UDR_INTERFACE_PORT_FOR_NUDR"
           initialDelaySeconds: 5
           periodSeconds: 5
         {{- end}}
@@ -71,8 +70,7 @@ spec:
         livenessProbe:
           exec:
             command:
-            - sh
-            - /scripts/live-ready.sh
+            - netstat -tnpl | grep -o "$UDR_INTERFACE_PORT_FOR_NUDR"
           initialDelaySeconds: 10
           periodSeconds: 5
         {{- end}}
