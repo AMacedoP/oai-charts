@@ -24,7 +24,7 @@ spec:
       initContainers:
       - name: wait-for-service
         image: yauritux/busybox-curl:latest
-        command: [ 'sh', '-c', "until echo -e '\x1dclose\x0d' | telnet mysql 3306; do echo waiting for mysql; sleep 4; done" ]
+        command: [ 'sh', '-c', "until echo -e '^]close^M' | telnet mysql 3306; do echo waiting for mysql; sleep 4; done" ]
       containers:
       - name: tcpdump
         image: "{{ .Values.tcpdumpimage.repository }}:{{ .Values.tcpdumpimage.version }}"
