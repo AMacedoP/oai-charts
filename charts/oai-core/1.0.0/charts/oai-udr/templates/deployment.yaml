@@ -31,8 +31,8 @@ spec:
           - '-c'
           - > 
             until mysql --host={{ .Values.config.mySqlServer }} --user={{ .Values.config.mySqlUser }} 
-            --password={{ .Values.config.mySqlPass }} --database={{ .Values.config.mySqlDb }} --execute='show tables; 
-            'do echo waiting for mysql; sleep 4; done; sleep 5
+            --password={{ .Values.config.mySqlPass }} --database={{ .Values.config.mySqlDb }} --execute='show tables;'; 
+            do echo waiting for mysql; sleep 4; done; sleep 5
       containers:
       - name: tcpdump
         image: "{{ .Values.tcpdumpimage.repository }}:{{ .Values.tcpdumpimage.version }}"
