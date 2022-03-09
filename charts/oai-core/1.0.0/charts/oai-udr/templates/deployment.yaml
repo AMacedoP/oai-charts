@@ -23,8 +23,16 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       initContainers:
       - name: wait-for-service
-        image: yauritux/busybox-curl:latest
-        command: [ 'sh', '-c', "until echo -e '^]close^M' | telnet mysql 3306; do echo waiting for mysql; sleep 4; done; sleep 5" ]
+#        image: yauritux/busybox-curl:latest
+        image: imega/mysql-client
+#        command: [ 'sh', '-c', "until echo -e '^]close^M' | telnet mysql 3306; do echo waiting for mysql; sleep 4; done; sleep 5" ]
+        command: 
+          - 'sh'
+          - '-c'
+          - > 
+            until mysql --host={{ .Values.config.mySqlServer }} --user={{ .Values.config.mySqlUser }} 
+            --password={{ .Values.config.mySqlPass }} --database={{ .Values.config.mySqlDb }} --execute='show tables; 
+            'do echo waiting for mysql; sleep 4; done; sleep 5
       containers:
       - name: tcpdump
         image: "{{ .Values.tcpdumpimage.repository }}:{{ .Values.tcpdumpimage.version }}"
