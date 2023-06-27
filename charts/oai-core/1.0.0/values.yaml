@@ -2,7 +2,7 @@ oai-amf:
   enabled: true
   weight: 5
   nfimage:
-    repository: rdefosseoai/oai-amf
+    repository: oaisoftwarealliance/oai-amf
     version: develop
     pullPolicy: IfNotPresent
 #  nodeSelector:
@@ -24,7 +24,7 @@ oai-smf:
   enabled: true
   weight: 6
   nfimage:
-    repository: rdefosseoai/oai-smf
+    repository: oaisoftwarealliance/oai-smf
     version: v1.2.1
     pullPolicy: IfNotPresent
 #  nodeSelector:
@@ -40,14 +40,14 @@ oai-nrf:
   nfimage:
     version: v1.2.1
     pullPolicy: IfNotPresent
-  repository: rdefosseoai/oai-nrf
+    repository: oaisoftwarealliance/oai-nrf
 #  nodeSelector:
 #    cnf-type: control-plane
 oai-spgwu-tiny:
   enabled: true
   weight: 7
   nfimage:
-    repository: rdefosseoai/oai-spgwu-tiny
+    repository: oaisoftwarealliance/oai-spgwu-tiny
     version: v1.1.4
     pullPolicy: IfNotPresent
 #  nodeSelector:
@@ -71,7 +71,7 @@ oai-ausf:
   weight: 4
   nfimage:
     version: v1.2.1
-    repository: rdefosseoai/oai-ausf
+    repository: oaisoftwarealliance/oai-ausf
     pullPolicy: IfNotPresent
 #  nodeSelector:
 #    cnf-type: control-plane
@@ -80,7 +80,7 @@ oai-udm:
   weight: 3
   nfimage:
     version: v1.2.1
-    repository: rdefosseoai/oai-udm
+    repository: oaisoftwarealliance/oai-udm
     pullPolicy: IfNotPresent
 #  nodeSelector:
 #    cnf-type: control-plane
@@ -89,7 +89,7 @@ oai-udr:
   weight: 2
   nfimage:
     version: v1.2.1
-    repository: rdefosseoai/oai-udr
+    repository: oaisoftwarealliance/oai-udr
     pullPolicy: IfNotPresent
   livenessProbe: true
   readinessProbe: true
