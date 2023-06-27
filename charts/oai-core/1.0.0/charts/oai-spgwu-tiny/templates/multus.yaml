@@ -16,8 +16,9 @@ spec:
                 {
                         "address": {{- cat .Values.multus.n3Ip "/" .Values.multus.n3Netmask | nospace | quote }}
                 }
-        ],
+        ]
         {{- if and .Values.multus.routes }}
+        ,
         "routes": [
                 {{- $length := len .Values.multus.routes -}}
                 {{- range $i, $route := .Values.multus.routes }}
